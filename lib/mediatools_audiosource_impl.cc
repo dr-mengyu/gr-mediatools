@@ -88,7 +88,7 @@ void mediatools_audiosource_impl::readData(std::vector<int16_t> &r){
     if(rf != 0){ d_ready = false; return; } // end of file ?
     // ensure output frame is allocated
     if(!d_frame)
-        d_frame = avcodec_alloc_frame();
+        d_frame = av_frame_alloc();
 
     // decode the frame
     int got_frame = 0;
